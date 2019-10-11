@@ -76,6 +76,8 @@ src = ['src/general/format.c', 'src/general/interface.c', 'src/general/link.c',
 odas_lib = library('odas', src, install: true, include_directories : odasinc, dependencies : [ fftw3_dep, alsa_dep, thread_dep, libm_dep ])
 pkg.generate(odas_lib, subdirs: 'odas')
 
+odas_dep = declare_dependency(include_directories : odasinc, link_with : odas_lib)
+
 odas_live_src = [ 'demo/odaslive/main.c', 'demo/odaslive/configs.c', 'demo/odaslive/objects.c', 'demo/odaslive/parameters.c', 'demo/odaslive/profiler.c', 'demo/odaslive/threads.c' ]
 
 odaslive_exe = executable('odaslive', odas_live_src, include_directories : [topinc, odasinc], dependencies: [libconfig_dep, libm_dep], link_with : odas_lib)
