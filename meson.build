@@ -1,4 +1,4 @@
-project('ODAS', 'c', license : 'GPL3+', default_options : ['default_library=shared'])
+project('ODAS', 'c', license : 'GPL3+', default_options : ['c_std=gnu99','default_library=shared'])
 
 cc = meson.get_compiler('c')
 pkg = import('pkgconfig')
