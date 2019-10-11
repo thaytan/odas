@@ -89,4 +89,5 @@
         // Close the sink
         snk_powers_close(obj->snk_powers);
 
+        return NULL;
     }

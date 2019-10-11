@@ -55,8 +55,6 @@
 
     void track2steer_destroy(track2steer_obj * obj) {
 
-        unsigned int iBin;
-
         free((void *) obj->factor);
         free((void *) obj->mics);
 

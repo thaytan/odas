@@ -29,7 +29,6 @@
         triangles_obj * triangles;
         
         unsigned int iPoint;
-        unsigned int iTriangle;
 
         float h,r;
 
@@ -411,7 +410,7 @@
         float dist, minDist;
         unsigned int iPointMin;
         float ux, uy, uz;
-        float tx, ty, tz;
+        //float tx, ty, tz;
         float x0, y0, z0;
         float xR, yR, zR;
         unsigned int iAngle;
@@ -557,14 +556,12 @@
         unsigned int iPoint2;
         unsigned int nPoints;
     
-        float diff, dist;        
         float point[3];
 
         float shortestDistance;
         float limitDistance;
 
         char * added;
-        unsigned int iPointCompare;
         float distance;
         float dx, dy, dz;
 

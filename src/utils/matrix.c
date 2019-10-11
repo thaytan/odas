@@ -26,8 +26,6 @@
     matrix_obj * matrix_construct_zero(const unsigned int nRows, const unsigned int nCols) {
 
         matrix_obj * obj;
-        unsigned int iRow;
-        unsigned int iCol;
 
         obj = (matrix_obj *) malloc(sizeof(matrix_obj));
 
@@ -45,9 +43,6 @@
 
         matrix_obj * obj;
 
-        unsigned int iRow;
-        unsigned int iCol;
-
         obj = (matrix_obj *) malloc(sizeof(matrix_obj));
 
         obj->nRows = matrix->nRows;
@@ -61,21 +56,11 @@
     }
 
     void matrix_copy_zero(matrix_obj * obj) {
-
-        unsigned int iRow;
-        unsigned int iCol;
-
         memset(obj->array, 0x00, sizeof(float) * obj->nRows * obj->nCols);
-
     }
 
     void matrix_copy_matrix(matrix_obj * obj, const matrix_obj * matrix) {
-
-        unsigned int iRow;
-        unsigned int iCol;
-
         memcpy(obj->array, matrix->array, sizeof(float) * matrix->nRows * matrix->nCols);
-
     }
 
     void matrix_destroy(matrix_obj * obj) {

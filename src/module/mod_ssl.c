@@ -27,9 +27,6 @@
 
         mod_ssl_obj * obj;
         unsigned int iLevel;
-        unsigned int iPot;
-
-        points_obj * points;
 
         obj = (mod_ssl_obj *) malloc(sizeof(mod_ssl_obj));
 
@@ -116,7 +113,6 @@
     void mod_ssl_destroy(mod_ssl_obj * obj) {
 
         unsigned int iLevel;
-        unsigned int iPot;
 
         scans_destroy(obj->scans);
 
@@ -302,7 +298,7 @@
         
         cfg->nLevels = 0;;
         cfg->levels = (unsigned int *) NULL;
-        cfg->deltas = (unsigned int *) NULL;
+        cfg->deltas = NULL;
         cfg->nMatches = 0;
         cfg->probMin = 0.0f;
         cfg->nRefinedLevels = 0;

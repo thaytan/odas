@@ -33,8 +33,6 @@
         unsigned int lambdaFineLeft;
         unsigned int lambdaFineRight;
 
-        float score;
-
         unsigned int iFine;
         unsigned int iCoarse;
         unsigned int iPair;

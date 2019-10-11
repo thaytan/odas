@@ -52,7 +52,6 @@
         unsigned int iChannel;
         
         unsigned int iThetaMic;
-        unsigned int iThetaFilter;
         
         float ux, uy, uz;
         float uNorm;

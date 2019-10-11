@@ -435,6 +435,10 @@
                 case interface_terminal:
 
                     printf("type = terminal\n");
+                    break;
+
+                case interface_undefined:
+                    printf("type = undefined\n");
 
                 break;
 

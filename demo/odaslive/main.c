@@ -172,7 +172,7 @@
             // | Configure                                        |
             // +--------------------------------------------------+ 
 
-                if (verbose == 0x01) printf("| + Initializing configurations...... "); fflush(stdout); 
+                if (verbose == 0x01) { printf("| + Initializing configurations...... "); fflush(stdout); }
 
                 cfgs = configs_construct(file_config);
 
@@ -182,7 +182,7 @@
             // | Construct                                        |
             // +--------------------------------------------------+  
 
-                if (verbose == 0x01) printf("| + Initializing objects............. "); fflush(stdout); 
+                if (verbose == 0x01) { printf("| + Initializing objects............. "); fflush(stdout); }
 
                 objs = objects_construct(cfgs);    
                 
@@ -192,7 +192,7 @@
             // | Processing                                       |
             // +--------------------------------------------------+  
 
-                if (verbose == 0x01) printf("| + Processing....................... "); fflush(stdout);
+                if (verbose == 0x01) { printf("| + Processing....................... "); fflush(stdout); }
 
                 threads_single_open(objs);
                 stopProcess = 0;
@@ -205,7 +205,7 @@
             // | Free memory                                      |
             // +--------------------------------------------------+  
 
-                if (verbose == 0x01) printf("| + Free memory...................... "); fflush(stdout);
+                if (verbose == 0x01) { printf("| + Free memory...................... "); fflush(stdout); }
 
                 objects_destroy(objs); 
                 configs_destroy(cfgs);
@@ -233,7 +233,7 @@
             // | Configure                                        |
             // +--------------------------------------------------+ 
 
-                if (verbose == 0x01) printf("| + Initializing configurations...... "); fflush(stdout); 
+                if (verbose == 0x01) { printf("| + Initializing configurations...... "); fflush(stdout); }
 
                 cfgs = configs_construct(file_config);
 
@@ -243,7 +243,7 @@
             // | Construct                                        |
             // +--------------------------------------------------+  
 
-                if (verbose == 0x01) printf("| + Initializing objects............. "); fflush(stdout); 
+                if (verbose == 0x01) { printf("| + Initializing objects............. "); fflush(stdout); }
                 
                 aobjs = aobjects_construct(cfgs);    
 
@@ -255,7 +255,7 @@
 
                 signal(SIGINT, sighandler);
 
-                if (verbose == 0x01) printf("| + Launch threads................... "); fflush(stdout); 
+                if (verbose == 0x01) { printf("| + Launch threads................... "); fflush(stdout); }
 
                 threads_multiple_start(aobjs);
 
@@ -265,7 +265,7 @@
             // | Wait                                             |
             // +--------------------------------------------------+  
 
-                if (verbose == 0x01) printf("| + Threads running.................. "); fflush(stdout); 
+                if (verbose == 0x01) { printf("| + Threads running.................. "); fflush(stdout); }
                 
                 threads_multiple_join(aobjs);
 
@@ -275,7 +275,7 @@
             // | Free memory                                      |
             // +--------------------------------------------------+  
 
-                if (verbose == 0x01) printf("| + Free memory...................... "); fflush(stdout);
+                if (verbose == 0x01) { printf("| + Free memory...................... "); fflush(stdout); }
 
                 aobjects_destroy(aobjs);
                 configs_destroy(cfgs);

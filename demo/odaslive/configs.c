@@ -4,7 +4,6 @@
     configs * configs_construct(const char * file_config) {
 
         configs * cfgs;
-        unsigned int iSink;
 
         cfgs = (configs *) malloc(sizeof(configs));
 
@@ -254,8 +253,6 @@
     }
 
     void configs_destroy(configs * cfgs) {
-
-        unsigned int iSink;
 
         // +----------------------------------------------------------+
         // | Raw                                                      |

@@ -34,7 +34,7 @@
         unsigned int iPair;
         unsigned int iPoint;
 
-        float diff, dist, tau;
+        float dist, tau;
         unsigned int tdoa;
 
         nPairs = mics->nChannels * (mics->nChannels -1) / 2;

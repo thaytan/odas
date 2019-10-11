@@ -89,4 +89,5 @@
         // Close the sink
         snk_spectra_close(obj->snk_spectra);
 
+        return NULL;
     }

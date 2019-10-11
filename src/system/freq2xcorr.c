@@ -53,9 +53,6 @@
         void freq2xcorr_process(freq2xcorr_obj * obj, const freqs_obj * freqs, const pairs_obj * pairs, xcorrs_obj * xcorrs) {
 
         unsigned int iSignal;
-        unsigned int iSample;
-        unsigned int iSampleSrc;
-        unsigned int iSampleDest;
 
         for (iSignal = 0; iSignal < freqs->nSignals; iSignal++) {
 

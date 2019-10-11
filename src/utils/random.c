@@ -167,7 +167,6 @@
 
         normaloff_obj * obj;
         normal_obj * normal;
-        unsigned int n;
         time_t t;
 
         obj = (normaloff_obj *) malloc(sizeof(normaloff_obj));

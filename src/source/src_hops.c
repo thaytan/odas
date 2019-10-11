@@ -26,7 +26,6 @@
     src_hops_obj * src_hops_construct(const src_hops_cfg * src_hops_config, const msg_hops_cfg * msg_hops_config) {
 
         src_hops_obj * obj;
-        unsigned int nBytes;
 
         obj = (src_hops_obj *) malloc(sizeof(src_hops_obj));
 
@@ -64,7 +63,9 @@
             case format_binary_int16: obj->bufferSize = obj->hopSize * obj->nChannels * 2; break;
             case format_binary_int24: obj->bufferSize = obj->hopSize * obj->nChannels * 3; break;
             case format_binary_int32: obj->bufferSize = obj->hopSize * obj->nChannels * 4; break;
-
+            default:
+                printf("Source hops: Invalid interface and/or format.\n");
+                exit(EXIT_FAILURE);
         }      
 
         obj->out = (msg_hops_obj *) NULL;
@@ -356,11 +357,10 @@
 
     int src_hops_process_interface_soundcard(src_hops_obj * obj) {
 
-        unsigned int nSamples;
         int rtnValue;
         int err;
 
-        if (err = snd_pcm_readi(obj->ch, obj->buffer, obj->hopSize) > 0) {
+        if ((err = snd_pcm_readi(obj->ch, obj->buffer, obj->hopSize)) > 0) {
             
             rtnValue = 0;    
 

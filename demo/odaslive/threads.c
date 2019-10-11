@@ -3,8 +3,6 @@
 
     void threads_multiple_start(aobjects * aobjs) {
 
-        unsigned int iSink;
-
         // +----------------------------------------------------------+
         // | Raw                                                      |
         // +----------------------------------------------------------+  
@@ -267,8 +265,6 @@
 
     void threads_multiple_join(aobjects * aobjs) {
 
-        unsigned int iSink;
-
         // +----------------------------------------------------------+
         // | Raw                                                      |
         // +----------------------------------------------------------+  
@@ -513,8 +509,6 @@
 
     void threads_single_open(objects * objs) {
 
-        unsigned int iSink;
-
         // +----------------------------------------------------------+
         // | Raw                                                      |
         // +----------------------------------------------------------+  
@@ -569,8 +563,6 @@
     }
 
     void threads_single_close(objects * objs) {
-
-        unsigned int iSink;
 
         // +----------------------------------------------------------+
         // | Raw                                                      |
@@ -629,8 +621,6 @@
 
         int rtnValue;
         int rtnResample;
-        unsigned int iSink;
-
         clock_t begin, end;
 
         prf->duration += ((float) (objs->src_hops_mics_object->hopSize)) / ((float) (objs->src_hops_mics_object->fS));

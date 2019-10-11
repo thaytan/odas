@@ -89,7 +89,6 @@
     void pitch2category_process(pitch2category_obj * obj, const pitches_obj * pitches, const tracks_obj * tracks, categories_obj * categories) {
 
         unsigned int iSep;
-        float deltaPitch;
 
         for (iSep = 0; iSep < obj->nSeps; iSep++) {
 

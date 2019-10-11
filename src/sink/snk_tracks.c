@@ -335,17 +335,15 @@
     void snk_tracks_process_format_text_json(snk_tracks_obj * obj) {
 
         unsigned int iTrack;
+        char *buffer = obj->buffer;
 
-        obj->buffer[0] = 0x00;
-
-        sprintf(obj->buffer,"%s{\n",obj->buffer);
-        sprintf(obj->buffer,"%s    \"timeStamp\": %llu,\n",obj->buffer,obj->in->timeStamp);
-        sprintf(obj->buffer,"%s    \"src\": [\n",obj->buffer);
+        buffer += sprintf(buffer,"{\n");
+        buffer += sprintf(buffer,"    \"timeStamp\": %llu,\n",obj->in->timeStamp);
+        buffer += sprintf(buffer,"    \"src\": [\n");
 
         for (iTrack = 0; iTrack < obj->nTracks; iTrack++) {
 
-            sprintf(obj->buffer,"%s        { \"id\": %llu, \"tag\": \"%s\", \"x\": %1.3f, \"y\": %1.3f, \"z\": %1.3f, \"activity\": %1.3f }", 
-                    obj->buffer,
+            buffer += sprintf(buffer,"        { \"id\": %llu, \"tag\": \"%s\", \"x\": %1.3f, \"y\": %1.3f, \"z\": %1.3f, \"activity\": %1.3f }", 
                     obj->in->tracks->ids[iTrack],
                     obj->in->tracks->tags[iTrack],
                     obj->in->tracks->array[iTrack*3+0], 
@@ -355,16 +353,16 @@
 
             if (iTrack != (obj->nTracks - 1)) {
 
-                sprintf(obj->buffer,"%s,",obj->buffer);
+                buffer += sprintf(buffer,",");
 
             }
 
-            sprintf(obj->buffer,"%s\n",obj->buffer);
+            buffer += sprintf(buffer,"\n");
 
         }
         
-        sprintf(obj->buffer,"%s    ]\n",obj->buffer);
-        sprintf(obj->buffer,"%s}\n",obj->buffer);
+        buffer += sprintf(buffer,"    ]\n");
+        buffer += sprintf(buffer,"}\n");
 
         obj->bufferSize = strlen(obj->buffer);
 

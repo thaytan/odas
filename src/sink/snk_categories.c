@@ -330,12 +330,12 @@
     void snk_categories_process_format_text_json(snk_categories_obj * obj) {
 
         unsigned int iChannel;
-
+        char *buffer = obj->buffer;
         obj->buffer[0] = 0x00;
 
-        sprintf(obj->buffer,"%s{\n",obj->buffer);
-        sprintf(obj->buffer,"%s    \"timeStamp\": %llu,\n",obj->buffer,obj->in->timeStamp);
-        sprintf(obj->buffer,"%s    \"src\": [\n",obj->buffer);
+        buffer += sprintf(buffer,"{\n");
+        buffer += sprintf(buffer,"    \"timeStamp\": %llu,\n",obj->in->timeStamp);
+        buffer += sprintf(buffer,"    \"src\": [\n");
 
         for (iChannel = 0; iChannel < obj->nChannels; iChannel++) {
 
@@ -343,19 +343,19 @@
 
                 case 0x01:
 
-                    sprintf(obj->buffer,"%s        { \"category\": \"speech\" }",obj->buffer);
+                    buffer += sprintf(buffer,"        { \"category\": \"speech\" }");
 
                 break;
 
                 case 0x00:
 
-                    sprintf(obj->buffer,"%s        { \"category\": \"nonspeech\" }",obj->buffer);
+                    buffer += sprintf(buffer,"        { \"category\": \"nonspeech\" }");
 
                 break;
 
                 default:
 
-                    sprintf(obj->buffer,"%s        { \"category\": \"undefined\" }",obj->buffer);
+                    buffer += sprintf(buffer,"        { \"category\": \"undefined\" }");
 
                 break;
 
@@ -363,16 +363,16 @@
 
             if (iChannel != (obj->nChannels - 1)) {
 
-                sprintf(obj->buffer,"%s,",obj->buffer);
+                buffer += sprintf(buffer,",");
 
             }
 
-            sprintf(obj->buffer,"%s\n",obj->buffer);
+            buffer += sprintf(buffer,"\n");
 
         }
         
-        sprintf(obj->buffer,"%s    ]\n",obj->buffer);
-        sprintf(obj->buffer,"%s}\n",obj->buffer);
+        buffer += sprintf(buffer,"    ]\n");
+        buffer += sprintf(buffer,"}\n");
 
         obj->bufferSize = strlen(obj->buffer);
 

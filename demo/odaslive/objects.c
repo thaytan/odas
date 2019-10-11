@@ -4,7 +4,6 @@
     objects * objects_construct(const configs * cfgs) {
 
         objects * objs;
-        unsigned int iSink;
 
         objs = (objects *) malloc(sizeof(objects));
 
@@ -560,9 +559,6 @@
     }
 
     void objects_destroy(objects * objs) {
-
-        unsigned int iSink;
-
         // +----------------------------------------------------------+
         // | Destroy                                                  |
         // +----------------------------------------------------------+
@@ -814,7 +810,6 @@
     aobjects * aobjects_construct(const configs * cfgs) {
 
         aobjects * objs;
-        unsigned int iSink;
 
         objs = (aobjects *) malloc(sizeof(aobjects));
 
@@ -1374,8 +1369,6 @@
     }
 
     void aobjects_destroy(aobjects * objs) {
-
-        unsigned int iSink;
 
         // +----------------------------------------------------------+
         // | Destroy                                                  |

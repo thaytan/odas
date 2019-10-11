@@ -677,7 +677,7 @@
     steer2demixing_mvdr_obj * steer2demixing_mvdr_construct_zero(const unsigned int nSeps, const unsigned int nChannels, const unsigned int halfFrameSize, const float alpha, const float sigma, const unsigned int deltaK) {
 
         // Not implemented yet
-
+        return NULL;
     }
 
     void steer2demixing_mvdr_destroy(steer2demixing_mvdr_obj * obj) {

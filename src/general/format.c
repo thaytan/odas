@@ -137,9 +137,7 @@
     void format_printf(const format_obj * obj) {
 
         if (obj != NULL) {
-
             switch(obj->type) {
-
                 case format_binary_int08:
                     printf("type = binary_int08\n");
                 break;
@@ -163,12 +161,12 @@
                 case format_text_json:
                     printf("type = text_json\n");
                 break;
-
+                case format_undefined:
+                    printf("(null)\n");
+                break;
             }
-
         }
         else {
             printf("(null)\n");
         }
-
     }

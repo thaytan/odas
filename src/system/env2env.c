@@ -250,14 +250,14 @@
 
                 }
 
-                //                                     \
+                //                                     +
                 // Smin_l[k] = min{Smin_l-1[k],S_l[k]} | l < L 
                 // Stmp_l[k] = min{Stmp_l-1[k],S_l[k]} |
-                //                                     / 
-                //                                     \
+                //                                     + 
+                //                                     +
                 // Smin_l[k] = min{Stmp_l-1[k],S_l[k]} | l = L
                 // Stmp_l[k] = S_l[k]                  |
-                //                                     /
+                //                                     +
 
                 if (obj->l[iChannel] <= obj->L) {
 
@@ -311,11 +311,11 @@
 
                 }
 
-                //                                                                  \
+                //                                                                  +
                 //                                                                  | S_l[k] < Smin_l[k] * delta
                 // lambdaD_l+1[k] = (1-alphaD) * lambdaD_l[k] + alphaD * |Y_l[k]|^2 | lambdaD_l[k] > |Y_l[k]|^2
                 //                                                                  |
-                //                                                                  / 
+                //                                                                  + 
                 //
                 // lambdaD_l+1[k] = lambdaD_l[k]                                    otherwise
                 //

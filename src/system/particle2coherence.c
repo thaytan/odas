@@ -53,7 +53,6 @@
         float x2, y2, z2, w2;
         float dx, dy, dz;
         float scale, factor;
-        float expr;        
 
         scale = obj->expScale;
         factor = obj->expFactor;

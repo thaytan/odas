@@ -72,7 +72,7 @@
 
     void profiler_printf(const profiler * prf) {
 
-        float source, sink, module, injector, connector;
+        float source, sink, module, connector;
         float total;
 
         source = prf->src_hops_mics_prf;
@@ -97,8 +97,6 @@
                  prf->mod_volume_seps_prf +
                  prf->mod_volume_pfs_prf +                
                  prf->mod_classify_prf;
-
-        injector = prf->inj_targets_sst_prf;
 
         connector = prf->con_hops_mics_raw_prf +
                     prf->con_hops_mics_map_prf +

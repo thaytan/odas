@@ -46,7 +46,6 @@
 
     void aimg_printf(const aimg_obj * obj) {
 
-        unsigned int iSignal;
         unsigned int iSample;
 
         for (iSample = 0; iSample < obj->aimgSize; iSample++) {

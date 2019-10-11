@@ -372,10 +372,6 @@
 
         msg_spectra_cfg * cfg;
 
-        unsigned int halfFrameSize;
-        unsigned int nChannels;
-        unsigned int fS;
-
         cfg = msg_spectra_cfg_construct();
 
         // +----------------------------------------------------------+
@@ -444,10 +440,6 @@
 
         msg_powers_cfg * cfg;
 
-        unsigned int halfFrameSize;
-        unsigned int nChannels;
-        unsigned int fS;
-
         cfg = msg_powers_cfg_construct();
 
         // +----------------------------------------------------------+
@@ -484,7 +476,6 @@
         unsigned int iLevel;
 
         char * tmpLabel;
-        char * tmpString;
 
         cfg = mod_ssl_cfg_construct();
 
@@ -710,9 +701,7 @@
         snk_pots_cfg * cfg;
         char * tmpStr1;
         char * tmpStr2;
-        char * tmpLabel;
         unsigned int tmpInt1;
-        unsigned int tmpInt2;
 
         cfg = snk_pots_cfg_construct();
 
@@ -1090,9 +1079,7 @@
         snk_tracks_cfg * cfg;
         char * tmpStr1;
         char * tmpStr2;
-        char * tmpLabel;
         unsigned int tmpInt1;
-        unsigned int tmpInt2;
 
         cfg = snk_tracks_cfg_construct();
 
@@ -1440,10 +1427,6 @@
 
         msg_spectra_cfg * cfg;
 
-        unsigned int halfFrameSize;
-        unsigned int nChannels;
-        unsigned int fS;
-
         cfg = msg_spectra_cfg_construct();
 
         // +----------------------------------------------------------+
@@ -1472,9 +1455,6 @@
 
         msg_spectra_cfg * cfg;
 
-        unsigned int halfFrameSize;
-        unsigned int nChannels;
-        unsigned int fS;
 
         cfg = msg_spectra_cfg_construct();
 

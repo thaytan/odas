@@ -173,7 +173,7 @@
         float x1, y1, z1;
         float x2, y2, z2;
         float dx, dy, dz;
-        float scale, factor;   
+        float factor;   
         float postprob;
         float expr, value;    
         float uniform, alpha, oneminusalpha, alphanorm;
@@ -189,7 +189,6 @@
         memset(obj->sum_P_p_x_O, 0x00, sizeof(float) * obj->nParticles);
 
         total_sum_P_p_x_O = obj->epsilon;
-        scale = obj->expScale;
         factor = obj->expFactor;
 
         for (iPot = 0; iPot < pots->nPots; iPot++) {
